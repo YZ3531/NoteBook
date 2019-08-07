@@ -1,0 +1,257 @@
+☞ 问题：
+      行内元素不能设置上下内外边距, 如果要设置那么需要给行内元素进行模式转化。
+
+☞ 总结：
+
+     1. line-height: 文字垂直居中  （选中文字所在的盒子设置）
+
+     2. margin: 0 auto;  盒子水平居中 （给盒子设置）
+
+     3. text-align：center;  盒子中内容居中的（文字，图片） 【给盒子设置】
+
+     4. line-height + vertical-align :  图片垂直居中  【line-height给父容器， vertical-align 给图片设置】
+
+     5. 绝对定位 + margin  ： 盒子水平居中和垂直居中 【给当前盒子设置】
+
+☞ 新选择器介绍
+     
+     1. 属性选择器：
+
+            [属性] {}
+
+
+         [type] {
+             border-color: red;
+         } */
+
+
+         /* 选择属性等于特定的值 */
+         /* [type = "text"] {
+             background-color: red;
+         } */
+
+
+         /* 选中属性中包含某个值 */
+         /* [type*="t"] {
+             
+             background-color: red;
+         } */
+
+
+         /* 选中属性中以某个值开始 */
+         /* [type ^= 't'] {
+             background-color: red;
+         } */
+         
+
+         /* 选中属性中以某个值结束 */
+         /* [type $='n'] {
+             background-color: red;
+         } */
+
+
+     2. 结构伪类选择器：
+
+         ✔   li:first-child{}    [选中父元素中第一个子元素是li]
+
+
+         ✔   :last-child 【选中父元素中最后一个子元素】
+
+
+         ✔   :nth-child(n) {}   【选中父元素中第n个子元素】   n的取值是从0开始的。
+
+☞ H5中新标签及表单控件
+        ✔ 新标签：语义标签【标签本身具有特殊的含义】。
+
+            <nav></nav>        在网页中用来表示导航区域的     【nav是一个语义标签，而div是一个没有语义的标签】
+
+
+            <header></header>  在网页中表示头部区域  【header标签比div具有语义性】
+
+            
+            <footer></footer>  在网页中表示结尾区域
+
+
+            <section></section>  在网页中表示区域的意思 
+
+
+            <article></article>  在网页中表示文章区域
+
+
+            <aside></aside>   侧边区域
+
+
+            
+            ☞ 一般情况下在移动端页面中用到以上语义标签会多一些。
+
+
+
+        ✔ 新表单控件：
+
+              1. 用来接收用户输入合法的邮箱地址。
+
+                 <input type="email">
+
+
+              2. 用来接收合法的网络地址
+
+                 <input type="url">
+
+
+              3. 用来接收数字
+
+                 <input type="number">
+
+                 属性： step用来设置每次累加（减少）的值
+
+              4. 日期控件
+                
+                 <input type="date">
+
+
+                 <input type="week">
+
+                 <input type="month">
+
+                 <input type="time">
+
+
+
+
+☞ 元素位移(CSS3)
+
+     位移： 还是在改变元素的位置。
+
+     写法：
+         transform: translate(x, y)
+
+     总结：
+         1. 位移一共有两个值要设置
+
+         2. 第一个值代表水平方向
+
+         3. 第二个值代表垂直方向
+
+         4. 通过位移改变元素位置，没有脱标。
+
+         5. 可以设置负数，负数代表相反的方向
+
+         6. 可以只设置一个值，代表水平方向。
+
+         7. translate可以设置百分比
+
+     扩展绝对定位盒子居中：
+
+           position: absolute;
+           left: 50%;
+           top: 50%;
+           transform: translate(-50%, -50%);
+     
+☞ 元素旋转(CSS3):
+
+    写法：
+           transform: rotate(角度)
+
+    总结：
+           1.  transform: rotate(角度) ，单位是  "deg"
+
+           2. 正数代表顺时针旋转
+
+           3. 负数代表逆时针旋转
+
+           4. 元素旋转中心默认在 中间位置  center center
+
+           5. 改变旋转点的位置通过transform-origin:  方位名称 | 具体的值;
+           
+☞ 元素缩放(CSS3)： 用来改变元素大小。
+
+      写法：
+          transform: scale(width, height);
+
+      总结：
+
+          1.第一值代表的是宽度的倍数，不需要代单位。
+
+          2.第二值代表的是高度的倍数，不需要代单位。
+
+          3. 大于0 小于1 代表 缩小
+
+          4. 等于1 代表不变。
+
+          5. 大于1 代表放大。
+
+          6. 可以只设置一个值，代表宽度和高度同时改变。
+
+☞ transform总结：
+
+       1. 如果要同时设置多个值，那么需要合写
+
+          例如： transform: scale(1.5)  rotate(40deg)  translate();
+
+☞ 过渡(动画效果)： 补间动画  【帧动画】
+
+        补间动画中需要有两个状态（动画开始的状态，动画结束的状态）
+
+
+        1.动画开始的状态：指的就是元素的默认样式
+
+        2.动画结束的状态： 动画执行完以后的效果
+
+
+        3. 过渡属性介绍：
+
+              transition-property: all（默认值）;
+
+              设置动画完成的时间
+              transition-duration：时间;
+
+
+             设置动画的速度类型
+               transition-timing-function： ease  | linear  |  ease-in |    ease-out |  ease-in-out 
+
+
+              设置动画延时执行
+
+               transition-delay: 2s;
+
+
+        4. 过渡属性合写方式：
+             
+              transition: all 1s linear 0.5s;
+
+
+              注意：
+                 1. 必须设置动画执行时间
+                 2. 没有顺序的要求
+                 3. 如果有时间，那么第一个时间永远都表示执行时间，第二个时间表示延时时间
+
+
+☞ 背景图片大小设置：
+
+      改变背景图片大小。
+      background-size: 值 值;
+
+      /* 将背景图片铺满整个元素 */
+      background-size: cover;
+
+      将背景图片按照比例完整的显示出来
+      background-size: contain;
+
+    
+☞ 网页关键字和描述信息设置（网页优化的步骤）：
+
+     1. 设置网页关键字
+     <meta name="keywords" content="自定义的关键字">
+
+
+     2. 设置网页描述
+    
+     <meta name="description" content="与网页内容相关的文字介绍">
+
+     3. 作用： 实现网站推广
+      
+
+
+
+
+

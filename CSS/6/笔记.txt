@@ -1,0 +1,65 @@
+☞元素隐藏方式：
+
+     1. 经常和js配合使用的一种隐藏
+
+         display: none;   隐藏元素(不占位置)
+
+         display: block;  显示元素
+
+     2. visibility: hidden;  隐藏元素（占位置）
+
+     3. overflow：hidden; 溢出隐藏
+
+        overflow：visible | hidden |  scroll |  auto;
+
+☞精灵图： 背景图。提高网页加载速度。
+
+       步骤：
+            ✔ 先将整个图片作为元素的背景图
+
+            ✔ 调整背景图的位置
+
+            ✔ 背景图片水平向左移动 （负数）
+
+            ✔ 背景图垂直向上移动  （负数）
+
+☞图标字体（掌握）： 本质就是一个特殊文字
+
+    https://www.iconfont.cn/collections/index?spm=a313x.7781069.1998910419.4&type=1
+
+☞其他伪类：
+     
+     :focus {}   当标签获取到鼠标焦点的时候样式。
+
+☞盒子大小计算:
+
+     box-sizing: border-box;  盒子实际大小就是我们设置的宽度和高度大小
+
+                 content-box; 盒子的内容区域大小
+
+☞边框合并：
+
+      border-collapse: collapse;  [只能用在表格中]
+
+
+☞样式初始化:
+
+       1. 去掉页面中标签的默认样式
+
+       2. 设置一个基本的统一样式（不能影响网页布局）
+
+          color,font-size, font-family
+
+          .left {  float: left; }   .right { float: right;}
+
+          网页中的版心   清除浮动
+
+    
+       3. 作用： 为了保证页面中所有标签的初始样式是一个统一的样式，避免出现不同浏览器有不同效果
+
+☞标签包含规范(了解)：
+
+       段落中不能包含 标题标签
+
+       段落中不能包含 div
+

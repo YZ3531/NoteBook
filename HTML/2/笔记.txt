@@ -1,0 +1,299 @@
+☞ 路径：所有标签只要支持路径的设置那么都以使用。
+
+    ✔ 绝对路径：在文件路径中凡是出现具体的磁盘目录，或者具体的网站地址
+
+        例如：  <img  src = "http://www.baidu.com/1.jpg">
+
+                <img  src ="D:\img\1.jpg">
+
+
+    ✔ 相对路径: 前提必须所有的文件在同一个根目录下
+
+        ✔ 如果当前html页面和被访问的资源（img）在同一个文件夹中，路径src = "直接设置文件名称";
+
+        ✔ 如果当前html页面和被访问的资源（img）在不在同一个文件夹中，假如HTMl页面在被访问资源的上一级目录中， 路径src =" 文件所在文件夹名称 / 文件名称 ";
+
+        ✔ 如果当前html页面和被访问的资源（img）在不在同一个文件夹中，假如HTMl页面在被访问资源的下一级目录中， 路径src ="../文件名称";
+
+           备注：
+               1. 注意一个 '../'代表返回一次上一级目录
+
+
+☞ 多媒体标签:
+
+       ✔ 视频标签：一般会在移动端开发使用
+
+            <video></video>
+
+            属性：
+
+                controls : 显示控制栏
+
+                loop： 循环播放
+
+                autoplay: 自动播放
+
+            
+            解决在谷歌浏览器中无法自动播放方式：
+
+            在chrome 浏览器中输入：chrome://flags
+            再搜索audio,找到Autoplay policy
+            再在右侧的选项中设置为 no user gesture is required 即可
+
+
+       ✔ 音频标签：
+
+            <audio></audio>
+
+
+☞ 设置网页图标：
+
+    步骤：
+         1. 在head标签中设置
+
+         2. 使用link标签设置图标
+   
+
+    例如： <link rel="icon" href="favicon.ico">
+
+
+☞ 实体字符：
+
+     ✔ 在浏览器中，所有的空格都会合并为一个空格。
+
+
+     ✔  &nbsp;   ---》 代表一个空格
+
+     ✔  &gt;    --->      >
+
+     ✔ &lt;     ---->      <
+
+     ✔ &yen;   
+
+
+☞ 列表： 显示信息。
+
+     ✔ 无序列表： 
+
+        <ul>
+            <li>列表项 （其他标签）</li>
+        </ul>
+
+     ✔ 有序列表：
+
+        <ol>
+           <li>列表项（其他标签）</li>
+        </ol>
+
+    ✔ 自定义列表：
+
+        <dl>
+            <dt>列表项的标题</dt>
+            <dd>列表项（用法与li一样）</dd>
+        </dl>
+
+☞ 表格：作用显示数据
+
+       （必须掌握） 组成：
+              1. 行          <tr>
+
+              2. 列（单元格） <td>
+
+              3. 表格   <table>
+
+            <table>
+
+              <tr>
+
+                <td></td>
+
+              </tr>
+
+            </table>
+
+
+        （必须掌握）属性：
+            width: 修改表格的宽度
+
+            height: 设置表格高度
+
+            border: 0(没有边框) | 值;
+
+            cellspacing: 设置td与td之间的距离（默认距离是 2）
+
+            align: left | center | right (设置对齐方式)
+
+            注意：
+                1. 如果给table标签设置align属性，控制table标签整体对齐方式
+
+                2. 如果希望内容居中，那么可以给tr或者td设置该属性
+
+       （掌握） 表格中的标签：
+             1. 标题标签  th (默认会让文字居中并且加粗)
+
+             2. 设置表格表头   caption
+
+
+        
+
+        表格中其他部分：
+              
+              ✔ cellpadding:  设置内容和td边框之间的距离
+
+              ✔ bgcolor ： 设置背景颜色
+
+              ✔ 合并单元格属性：
+
+                  ☞ 横向合并:  colspan = 值;   
+
+                  ☞ 纵向合并:  rowspan = 值;
+
+            注意：
+                 1。 合并完单元格后要将多余的列删掉
+
+
+        表格的基本结构（了解）：
+
+             <table>
+
+                 <thead>
+                     tr 
+                        th
+                 </thead>
+
+                 <tbody>
+                      tr 
+                         td
+                 </tbody>
+
+
+                 <tfoot>
+
+                        tr  
+
+                          td
+
+                 </tfoot>
+
+             </table>
+
+
+        注意：
+             1. 表格中的thead,tbody，tfoot有浏览器兼容性
+
+             2. 如果没有写thead,tbody，tfoot，当前浏览器如果支持该结构，那么浏览器会默认自动添加tbody
+
+
+☞ 表单：
+
+     组成：
+          1. 表单控件
+
+          2. 提示信息
+
+          3. form（表单）
+
+    作用：
+        用来获取数据的。
+
+
+    使用场景：
+         1。在登录页面
+
+         2。在注册页面
+
+
+    表单的重点： 表单控件
+
+
+         1. 输入框
+
+            <input type="text">
+
+            属性：
+
+                maxlength: 用来设置当前控件中最多能输入多少个字符
+
+                readonly: 用来设置禁止用户输入
+
+                disabled: 用来设置禁止用户输入
+
+                placeholder: 占位符（提示信息）
+
+                value： 设置标签的默认值
+
+                name: 类似于我们自己的名字
+
+                id： 类似于我们的身份证号
+
+         2. 密码输入框
+              
+              <input type="password">
+
+              属性与输入框一样！
+
+
+        3. 单选控件：
+
+            <input type="radio"> 男
+
+            属性：
+                checked ： 用来设置默认选中项
+
+            备注：
+                 如果要实现单选，那么要设置相同的name值
+
+
+        4. 下拉列表框
+
+            <select>
+                <option>河北</option>
+                <option>河南</option>
+                <option>山东</option>
+                <option>山西</option>
+            </select>
+
+
+            属性：
+                selected: 设置下拉列表的默认选中项
+
+
+            或者其他写法：
+
+             <select>
+                <optgroup label="河北省">
+                    <option>张家口</option>
+                    <option>石家庄</option>
+                    <option>保定</option>
+                    <option>秦皇岛</option>
+                </optgroup>
+            </select>
+
+
+        5 多选控件
+
+            <input type="checkbox">
+
+           属性：
+
+                checked：用来设置默认选中项
+
+
+        6. 按钮系列：
+
+             <input type="submit">   作用： 将表单控件中的值提交给某个程序去处理
+
+            <input type="button" value="注册">  和js配合使用
+
+            <input type="reset">   将表单控件中的值恢复到默认值
+
+            <input type="image" src="按钮.jpg">   作用： 将表单控件中的值提交给某个程序去处理
+
+
+        7. 文本域： 输入多行文字
+
+        8. 上传控件：
+
+                
+
+
