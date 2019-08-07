@@ -1,0 +1,130 @@
+☞ 重点：rem适配（细节适配）
+
+☞ LESS：维护CSS代码的管理工具
+     
+     1. 如果希望通过less的方式去编写CSS代码，那么我们需要新建一个less文件。
+
+     2. less文件中是完全支持css的原生写法
+
+     3. less还支持其他的设置方式：
+
+           ✔ 支持变量的写法： 变量[可以发生改变的一个值]
+
+              @自定义变量名: 值;
+
+              例如：
+              @fontsize: 12px;
+              p {
+                   font-size: @fontsize;
+              }
+
+
+           ✔ 支持嵌套写法：
+                
+                选择器 {
+
+                     选择器 {}
+                }
+
+            
+            ✔ 支持数学运算
+
+                例如：  p {  font-size :  200px * 2 }
+
+
+            ✔ 支持公共样式的设置
+
+               例如：
+                   
+
+                   定义公共样式
+                   .test() {
+                       样式
+                   }
+
+                   调用公共样式
+                   p {
+                        .test()
+                   }
+
+
+            ✔ 在公共样式中可以设置参数（变量）
+
+                 例如： 
+
+                 .public(@color, @fontsize, @width) {
+                    color: @color;
+                    font-size: @fontsize;
+                    width: @width;
+                }
+
+
+                p {
+                    .public(red, 14px, 120px); 
+                }
+
+
+                div {
+                    .public(blue, 20px, 300px);
+                }
+
+
+    4. 如果在HTML页面中使用less文件代码
+
+            ✔ 直接引用通过less编译过后的css文件
+
+            ✔ 也可以直接在网页中引用less文件
+
+                注意：
+                     ☞ 需要通过link标签引用less文件
+
+                     例如：  <link rel="stylesheet/less" href="index.less">
+
+
+                     ☞ 需要引用一个less.js文件
+
+                     例如： <script src="less.js"></script>
+
+                     ☞ 需要将项目放置到服务器端
+
+
+☞ REM适配
+
+    rem单位：  相对单位, 相对根标签中的文字大小（html标签中的文字大小）
+
+     em单位：  相对单位，相对当前文字大小。
+
+
+    如何实现通过rem实现页面适配？
+        
+
+☞ 媒体查询: 通过CSS代码检查当前设备宽度
+
+     语法：
+          @media only screen and (width: 375px) { 
+
+                对应的CSS代码
+          }
+
+
+
+     可以检测设备是竖屏模式还是横屏模式：
+
+       @media  only screen and (orientation: portrait) {
+             div {
+                 width: 100%;
+                 height: 100px;
+                 background-color: red;
+             }
+        }
+
+
+        @media only screen and (orientation: landscape) {
+             div {
+                  width: 100%;
+                  height: 100px;
+                  background-color: blue;
+             }
+        }
+
+      

@@ -1,0 +1,161 @@
+移动web
+
+1. 核心：学习如何实现页面适配
+        （保证同一个网页在不同设备下都能够正常预览【页面水平方向不能出现滚动条和页面内容不能出现缩放】）
+
+
+2. 今日目标动画效果：
+
+    ☞ animation : 补间动画（开始状态和结束状态）
+
+       步骤：
+           
+          1. 定义一个动画集（动画序列）
+
+               @keyframes + 自定义动画名称 {
+
+                   from {
+
+                   }
+
+                   to {
+
+                   }
+               }
+
+
+            2. 元素要执行对应的动画，需要调用动画。
+
+                ✔ 通过动画名称调用动画
+
+                    animation-name
+
+                ✔ 设置动画时间
+
+                    animation-duration
+
+                ✔ 动画执行的次数
+
+                    animation-iteration-count: infinite(无限次)
+
+                ✔ 设置动画的速度类型
+
+                     animation-timing-function: ease (默认值) | linear | ease-in | ease-out |  ease-in-out
+
+                ✔ 设置动画延时属性
+
+                     animation-delay
+
+                ✔ 设置动画逆播
+
+                     animation-direction: alternate;
+
+
+                 ✔ 设置动画结束后的状态
+
+                     animation-fill-mode: forwards; （在结束位置处停下）
+
+                     注意：设置animation-fill-mode的时候，必须要保证动画的执行次数不是infinite
+
+
+            3. 动画属性合写方式：
+
+                  animation: rotate  2s;
+
+
+                注意：
+
+                    ✔ 必须设置动画名称
+
+                    ✔ 必须设置动画执行时间
+
+                    ✔ 属性之间没有顺序要求，使用空格隔开设置即可。  
+
+
+      总结：
+           1. animation动画效果自己就可以执行，不需要用户触发
+
+           2. animation动画默认只执行一次。
+         
+
+
+3. 3D转化
+
+    ✔ 回顾2D转化
+
+       transform: translate()  rotate()   scale();
+
+    ✔ 3D转化：只比2d转化中多了一个坐标轴  Z 轴
+
+      3D坐标系：
+
+             x轴：  水平从左向右为正方向
+
+             y轴：  垂直从上向下为正方向
+
+             z轴：  从内向外为正方向
+
+      3D转化具体属性介绍：
+
+             ✔ 位移
+
+                translateX();
+
+                translateY();
+
+                translateZ();
+
+             ✔  旋转:  默认元素沿着坐标轴旋转的时候，坐标轴也是在元素的正中间，可以通过 transform-origin改          变旋转轴的位置
+                 
+                 rotateX()  
+
+                 rotateY()
+
+                 rotateZ()
+
+
+             ✔ 缩放：改变元素大小
+
+                 scaleX()
+
+                 scaleY()
+
+                 scaleZ() ： 保证当前元素是一个立体的元素才可以看到效果
+
+
+      备注：
+           1. 如果希望在网页中看到近大远小的效果，需要添加透视
+
+           2. 给设置了transform属性的标签的父元素设置透视即可。
+
+           3. 3d位移中同样可以设置百分比的方式
+
+           4. 通过3d实现定位元素居中设置方式：
+
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translateX(-50%) translateY(-50%);
+
+
+           5. 如果希望让元素绕着某个点旋转（可以选择2d旋转，3d的旋转rotateZ() ）;
+
+           6. 如果希望元素绕着轴旋转（只能使用3D旋转）
+
+           7. 如果希望改变元素的位置（2d位移和3d位移都可以， 在改变元素位置的时候如果希望出现近大远小效果那么需要用3d的位移）
+
+           8. 如果希望改变元素大小（2d缩放和3d的缩放都可以，但是如果希望改变元素的厚度，那么需要使用3d的方式）
+
+           9. 3d转化方式和2d转化方式不能混合使用
+
+           10.  transform-style: preserve-3d; 将平面图形转化为立体图形
+
+
+
+4. 补充知识点：
+      
+      目标伪类选择器： 要和锚链接配合使用。
+      :target {
+
+      }
+      
