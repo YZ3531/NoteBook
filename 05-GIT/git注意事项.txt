@@ -1,0 +1,11 @@
+status	 查看状态
+untracked	未跟踪的
+			①字体为红色的文件就是没有受git管理的文件
+			②字体为绿色的文件是受git管理的文件
+git commit -m "说明"	给提交文件添加说明
+git log		查看提交文件历史版本信息(详细信息)
+git log --oneline	查看提交文件历史版本信息(简写,一行显示)
+Merge fonflict		合并冲突,需要手动修改
+
+commit -a -m ""		添加并提交	
+stash			暂存	stash pop 恢复
